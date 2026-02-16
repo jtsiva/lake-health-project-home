@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lake Health Project - Monitoring and protecting our local lake ecosystem through community science">
+    <title>Home | Lake Health Project</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">Lake Health Project</a>
+            <nav>
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/learn/">Learn</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="#get-involved">Get Involved</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section>
+            <h1>Lake Health Project</h1>
+            <p class="text-center mb-3">Monitoring and protecting our local lake ecosystem through community science</p>
+            
+            <!-- Lake View Slideshow -->
+            <div class="iframe-container mb-4">
+                <iframe title="Interactive slideshow of our lake" src="https://jtsiva.github.io/lake-health-project-lake-view/" loading="lazy" allowfullscreen></iframe>
+            </div>
+            
+            <!-- Lake Dashboard -->
+            <h2>Current Lake Health Status</h2>
+            <div class="iframe-container mb-4">
+                <iframe title="Dashboard of lake health metrics" src="https://jtsiva.github.io/lake-health-dashboard/" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <section id="get-involved">
+            <h2>Get Involved</h2>
+            <p>You can contribute to our lake monitoring efforts in several ways:</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Submit Wildlife Observations</h3>
+                        <p>Help us track biodiversity by sharing what you've seen around the lake.</p>
+                        <a href="/learn/observations/wildlife.html" class="btn mt-2">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Participate in Citizen Science</h3>
+                        <p>Join other projects and build your scientific skills.</p>
+                        <a href="https://scistarter.org/" target="_blank" rel="noopener" class="btn mt-2">Find Projects</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Contact Our Team</h3>
+                        <p>Have questions or want to volunteer? Get in touch!</p>
+                        <a href="mailto:info@lakehealthproject.org" class="btn mt-2">Email Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>About the Project</h2>
+            <p>The Lake Health Project was initiated after our community experienced unprecedented algae growth. Our local scientist, Julianne Taylor, is conducting ecological monitoring to understand the lake's health and develop sustainable solutions.</p>
+            
+            <p>Over three years, we're measuring:</p>
+            <ul>
+                <li>Water quality parameters (temperature, pH, ORP, dissolved oxygen, phosphorus, nitrogen)</li>
+                <li>Vegetation coverage and diversity</li>
+                <li>Wildlife usage through camera traps and surveys</li>
+            </ul>
+            
+            <p>Our goal is to limit algal growth through mechanical weed removal rather than chemical treatments, creating a healthier ecosystem for all.</p>
+            
+            <div class="text-center mt-4">
+                <a href="/about/" class="btn btn-large">Learn More About Our Project</a>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Learn About Lake Monitoring</h2>
+            <p>Discover how we collect and analyze data to understand our lake's health:</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Equipment Guides</h3>
+                        <p>Learn about the tools we use for water testing and monitoring.</p>
+                        <a href="/learn/equipment/" class="btn mt-2">View Equipment</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Testing Procedures</h3>
+                        <p>Step-by-step guides for conducting water quality tests.</p>
+                        <a href="/learn/testing/" class="btn mt-2">View Procedures</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Observation Methods</h3>
+                        <p>How to document wildlife and social observations effectively.</p>
+                        <a href="/learn/observations/" class="btn mt-2">View Methods</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>© <span id="current-year"></span> Lake Health Project | <a href="mailto:info@lakehealthproject.org">Contact Us</a></p>
+            <p class="mt-1">Dedicated to monitoring and protecting our local lake ecosystem through community science.</p>
+        </div>
+    </footer>
+    
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

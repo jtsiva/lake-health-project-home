@@ -1,1 +1,33 @@
 .qwen/
+
+# GitHub Pages deployment directory - managed by website-manager.bat
+# This ensures docs/ is always in sync with minimal-website/
+!docs/
+
+# Development tools and scripts
+website-manager.bat
+
+# IDE and temporary files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Build and dependency directories
+node_modules/
+build/
+dist/
+
+# Environment files
+.env
+.env.*
+
+# Logs and runtime data
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
