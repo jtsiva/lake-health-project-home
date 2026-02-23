@@ -20,6 +20,11 @@ node_modules/
 build/
 dist/
 
+# Playwright test results and screenshots
+playwright-report/
+test-results/
+*.png
+
 # Environment files
 .env
 .env.*
