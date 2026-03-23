@@ -23,8 +23,7 @@ https://[your-username].github.io/lake-health-project-home/
 lake-health-project-home/
 ├── .gitignore                  # Updated to handle docs/
 ├── website-manager.bat         # Deployment tool
-├── minimal-website/            # Development files (13 files)
-├── docs/                       # Deployment files (15 files)
+├── docs/                       # Website files (development and deployment)
 ├── raw/                        # Original files (16 files)
 └── [documentation files]      # CHANGELOG, specs, etc.
 ```
@@ -43,13 +42,12 @@ website-manager test
 - Open browser to: http://localhost:8080/
 - Press Ctrl+C to stop
 
-#### Sync Content
+#### Check Content
 ```bash
 website-manager sync
 ```
-- Copies from `minimal-website/` to `docs/`
-- Preserves all file structure and content
-- Shows file count statistics
+- Verifies `docs/` directory exists
+- Shows directory statistics
 
 #### Deploy to GitHub
 ```bash
@@ -60,12 +58,12 @@ website-manager deploy
 - Pushes to GitHub main branch
 - Automatically triggers GitHub Pages update
 
-#### Full Cycle (Test → Sync → Deploy)
+#### Full Cycle (Test → Deploy)
 ```bash
 website-manager full
 ```
 - Tests website locally
-- Syncs content
+- Verifies content
 - Asks for confirmation
 - Deploys to GitHub
 
@@ -80,41 +78,40 @@ website-manager full
 | `full` | Test, sync, deploy | `website-manager full` |
 | `help` | Show help | `website-manager help` |
 
-## 🔄 Content Synchronization Strategy
+## 🔄 Content Management Strategy
 
 ### How It Works
-1. **Development**: Edit files in `minimal-website/`
+1. **Development**: Edit files directly in `docs/`
 2. **Testing**: Test locally using `website-manager test`
-3. **Sync**: Copy to `docs/` using `website-manager sync`
-4. **Deploy**: Push to GitHub using `website-manager deploy`
-5. **Live**: GitHub Pages automatically updates
+3. **Deploy**: Push to GitHub using `website-manager deploy`
+4. **Live**: GitHub Pages automatically updates
 
-### Keeping Content In Sync
-- **Always edit** files in `minimal-website/` (development)
-- **Never edit** files in `docs/` directly
-- **Use sync tool** to copy changes: `website-manager sync`
-- **Deploy frequently** to keep live site updated
+### Keeping Content Updated
+- **Edit files directly** in `docs/` (development and deployment)
+- **Test locally** using `website-manager test`
+- **Deploy frequently** using `website-manager deploy`
+- **No sync needed** - work directly in `docs/`
 
-### File Structure Mapping
+### File Structure
 ```
-minimal-website/            →    docs/
-├── index.html              →    ├── index.html
-├── about/                  →    ├── about/
-│   └── index.html          →    │   └── index.html
-├── learn/                  →    ├── learn/
-│   ├── index.html          →    │   ├── index.html
-│   ├── equipment/          →    │   ├── equipment/
-│   │   ├── *.html          →    │   │   └── *.html
-│   ├── testing/            →    │   ├── testing/
-│   │   ├── *.html          →    │   │   └── *.html
-│   └── observations/       →    │   └── observations/
-│       ├── *.html          →    │       └── *.html
-├── assets/                 →    ├── assets/
-│   ├── css/                →    │   ├── css/
-│   │   └── style.css       →    │   │   └── style.css
-│   └── js/                 →    │   └── js/
-│       └── main.js         →    │       └── main.js
-└── 404.html                →    └── 404.html
+docs/
+├── index.html
+├── about/
+│   └── index.html
+├── learn/
+│   ├── index.html
+│   ├── equipment/
+│   │   ├── *.html
+│   ├── testing/
+│   │   ├── *.html
+│   └── observations/
+│       ├── *.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── main.js
+└── 404.html
 ```
 
 ## 🛠️ Troubleshooting
@@ -132,17 +129,17 @@ minimal-website/            →    docs/
 2. **Port Conflict**: Try different port: edit `website-manager.bat` line 10
 3. **Firewall**: Allow port 8080 in firewall settings
 
-#### Sync Issues
+#### Common Issues
 1. **Directory Missing**: Run `mkdir docs` if needed
 2. **Permission Issues**: Run command prompt as administrator
-3. **Files Not Copying**: Check `minimal-website/` exists
+3. **Files Not Found**: Check `docs/` directory exists
 
 ## 🎨 Customization
 
 ### Change Deployment Settings
 Edit `website-manager.bat` lines 7-10:
 ```batch
-SET "SOURCE_DIR=minimal-website"
+SET "SOURCE_DIR=docs"
 SET "DEPLOY_DIR=docs"
 SET "TEST_PORT=8080"
 SET "GIT_BRANCH=main"
