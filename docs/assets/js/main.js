@@ -48,32 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Lazy loading for images and iframes
-    if ('loading' in HTMLImageElement.prototype) {
-        // Native lazy loading is supported
-        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-        lazyImages.forEach(img => {
-            img.src = img.dataset.src;
-        });
-    } else {
-        // Fallback for browsers that don't support lazy loading
-        const lazyLoad = function() {
-            const lazyImages = document.querySelectorAll('img[data-src]');
-            lazyImages.forEach(img => {
-                if (img.getBoundingClientRect().top < window.innerHeight + 100 && 
-                    img.getBoundingClientRect().bottom > 0 && 
-                    getComputedStyle(img).display !== 'none') {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                }
-            });
-        };
-        
-        document.addEventListener('scroll', lazyLoad);
-        window.addEventListener('resize', lazyLoad);
-        window.addEventListener('orientationchange', lazyLoad);
-        lazyLoad(); // Check on initial load
-    }
 });
 
 // Utility functions
